@@ -7,9 +7,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "workspacedellate"
-    key    = "workspace.tfstate"
-    region = "us-east-1"
+    bucket             = "workspacedellate"
+    key                = "workspace.tfstate"
+    region             = "us-east-1"
+    aws_dynamodb_table = "dynamodb-state-locking"
   }
 }
 
